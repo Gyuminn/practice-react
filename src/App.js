@@ -1,7 +1,7 @@
-import "./App.css";
+import MyComponents from "./MyComponents";
 
-function App() {
-  return <>practice</>;
-}
+const App = () => {
+  return <MyComponents />;
+};
 
 export default App;
