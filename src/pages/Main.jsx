@@ -26,7 +26,6 @@ export default Main;
 const StyledRoot = styled.div`
   display: flex;
   flex-direction: column;
-  padding-left: 5rem;
 `;
 
 const StyledLink = styled(Link)`

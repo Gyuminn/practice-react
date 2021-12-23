@@ -15,7 +15,7 @@ const Header = () => {
 export default Header;
 
 const StyledRoot = styled.div`
-  margin: 2rem 5rem;
+  margin: 2rem 0;
   display: flex;
   flex-direction: column;
 `;
