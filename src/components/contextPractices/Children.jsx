@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "./GrandParent";
 
 const Children = () => {
-  return <div>Children</div>;
+  const theme = useContext(ThemeContext);
+  return (
+    <div>
+      Children
+      <button style={{ background: theme.background, color: theme.foreground }}>
+        I'm styled by theme context
+      </button>
+    </div>
+  );
 };
 
 export default Children;
