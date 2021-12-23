@@ -17,6 +17,9 @@ const Main = () => {
       <StyledLink to="/contextPractice">
         <button>context-Practice</button>
       </StyledLink>
+      <StyledLink to="/reducerPractice">
+        <button>reducer-Practice</button>
+      </StyledLink>
     </StyledRoot>
   );
 };
@@ -26,9 +29,12 @@ export default Main;
 const StyledRoot = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
 `;
 
 const StyledLink = styled(Link)`
   text-decoration: none;
   margin-bottom: 1rem;
+  width: 5rem;
 `;
