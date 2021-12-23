@@ -1,14 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Main = () => {
   return (
     <StyledRoot>
-      <div>안녕하세요, 김규민의 리액트 연습 공간입니다.</div>
-      <button>prop-Practice</button>
-      <button>useState-Practice</button>
-      <button>event-Practice</button>
-      <button>context-Practice</button>
+      <StyledLink to="/propPractice">
+        <button>prop-Practice</button>
+      </StyledLink>
+      <StyledLink to="/useStatePractice">
+        <button>useState-Practice</button>
+      </StyledLink>
+      <StyledLink to="/eventPractice">
+        <button>event-Practice</button>
+      </StyledLink>
+      <StyledLink to="/contextPractice">
+        <button>context-Practice</button>
+      </StyledLink>
     </StyledRoot>
   );
 };
@@ -16,12 +24,12 @@ const Main = () => {
 export default Main;
 
 const StyledRoot = styled.div`
-  margin: 2rem 5rem;
   display: flex;
   flex-direction: column;
+  padding-left: 5rem;
+`;
 
-  & > button {
-    width: 10rem;
-    margin: 1rem;
-  }
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  margin-bottom: 1rem;
 `;

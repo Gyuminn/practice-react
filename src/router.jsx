@@ -5,10 +5,12 @@ import Say from "./pages/Say";
 import EventPractice from "./pages/EventPractice";
 import ContextPractice from "./pages/ContextPractice";
 import Main from "./pages/Main";
+import Header from "./components/common/Header";
 
 const Router = () => {
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/propPractice" element={<MyComponents />} />
