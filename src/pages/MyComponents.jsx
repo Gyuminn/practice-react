@@ -1,7 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const MyComponents = ({ name, favoriteNumber }) => {
+const MyComponents = () => {
+  const name = "kimkyumin";
+  const favoriteNumber = 3;
+
   return (
     <div>
       안녕하세요, 제 이름은 {name}입니다.
