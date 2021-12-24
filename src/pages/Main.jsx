@@ -15,10 +15,13 @@ const Main = () => {
         <button>event-Practice</button>
       </StyledLink>
       <StyledLink to="/contextPractice">
-        <button>context-Practice</button>
+        <button>useContext-Practice</button>
       </StyledLink>
       <StyledLink to="/reducerPractice">
-        <button>reducer-Practice</button>
+        <button>useReducer-Practice</button>
+      </StyledLink>
+      <StyledLink to="/refPractice">
+        <button>useRef-Practice</button>
       </StyledLink>
     </StyledRoot>
   );
