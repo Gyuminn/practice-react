@@ -18,8 +18,8 @@ const ReducerPractice = () => {
   return (
     <div>
       Count:{state.count}
-      <button onClick={() => dispatch({ type: "decrement" })}>-</button>
-      <button onClick={() => dispatch({ type: "increment" })}>+</button>
+      <button onClick={() => dispatch({ type: "decrement" })}>빼기-</button>
+      <button onClick={() => dispatch({ type: "increment" })}>더하기+</button>
     </div>
   );
 };
