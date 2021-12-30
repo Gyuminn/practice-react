@@ -13,7 +13,7 @@ const reducer = (state, action) => {
   }
 };
 
-export const useAsync = (callback, deps = []) => {
+export const useAsync = (callback, deps = [], skip = false) => {
   const [state, dispatch] = useReducer(reducer, {
     loading: false,
     data: null,
@@ -31,6 +31,7 @@ export const useAsync = (callback, deps = []) => {
   };
 
   useEffect(() => {
+    if (skip) return;
     fetchData();
   }, deps);
 
