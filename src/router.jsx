@@ -10,6 +10,7 @@ import Parent from "./components/contextPractices/Parent";
 import Children from "./components/contextPractices/Children";
 import ReducerPractice from "./pages/ReducerPractice";
 import RefPractice from "./pages/RefPractice";
+import ApiPractice from "./pages/ApiPractice";
 
 const Router = () => {
   return (
@@ -26,6 +27,7 @@ const Router = () => {
         <Route path="/contextPractice/Children" element={<Children />} />
         <Route path="/reducerPractice" element={<ReducerPractice />} />
         <Route path="/refPractice" element={<RefPractice />} />
+        <Route path="/apiPractice" element={<ApiPractice />} />
       </Routes>
     </BrowserRouter>
   );

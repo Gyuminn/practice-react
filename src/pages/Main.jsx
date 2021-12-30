@@ -23,6 +23,9 @@ const Main = () => {
       <StyledLink to="/refPractice">
         <button>useRef-Practice</button>
       </StyledLink>
+      <StyledLink to="/apiPractice">
+        <button>api-Practice</button>
+      </StyledLink>
     </StyledRoot>
   );
 };
