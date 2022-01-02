@@ -33,6 +33,7 @@ const Users1 = () => {
 
   return (
     <div>
+      <span>Users1: 아래는 useState를 이용하여 API를 연동한 부분입니다!</span>
       {users.map((user, idx) => (
         <li key={idx}>{user.username}</li>
       ))}

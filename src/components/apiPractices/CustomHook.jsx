@@ -16,6 +16,10 @@ const CustomHook = () => {
   if (!users) return <button onClick={refetch}>유저 정보 불러오기</button>;
   return (
     <div>
+      <span>
+        CustomHook: 아래 부분은 customHook(useAsnyc)를 이용하여 API 연동한
+        부분입니다!
+      </span>
       {users.map((user, idx) => (
         <li key={idx}>{user.username}</li>
       ))}
