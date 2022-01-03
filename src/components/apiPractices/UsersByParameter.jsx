@@ -26,7 +26,7 @@ const UsersByParameter = () => {
       <span>
         UsersByParameter: 아래 부분은 useAsync customHook을 이용하고, id를
         가져와서 하위 컴포넌트인 'Users3'에 넘겨줍니다. 이를 이용하여 user를
-        클릭하면 그에 대한 정보를 가져옵니다.
+        클릭하면 그에 대한 정보를 가져옵니다. 이 방식을 잘 이용해보도록 합시다!
       </span>
       <ul>
         {users.map((user) => (
