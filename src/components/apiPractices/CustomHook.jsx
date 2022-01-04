@@ -17,7 +17,7 @@ const CustomHook = () => {
   return (
     <div>
       <span>
-        CustomHook: 아래 부분은 customHook(useAsnyc)를 이용하여 API 연동한
+        CustomHook: 아래 부분은 customHook(useAsync)를 이용하여 API 연동한
         부분입니다!
       </span>
       {users.map((user, idx) => (
