@@ -26,6 +26,9 @@ const Main = () => {
       <StyledLink to="/apiPractice">
         <button>api-Practice</button>
       </StyledLink>
+      <StyledLink to="/typeScriptPractic">
+        <button>typeScript-Practice</button>
+      </StyledLink>
     </StyledRoot>
   );
 };
