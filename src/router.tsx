@@ -28,6 +28,7 @@ const Router = () => {
         <Route path="/reducerPractice" element={<ReducerPractice />} />
         <Route path="/refPractice" element={<RefPractice />} />
         <Route path="/apiPractice" element={<ApiPractice />} />
+        {/* <Route path="/typeScriptPractice" element={<TypeScriptPractice />} /> */}
       </Routes>
     </BrowserRouter>
   );
