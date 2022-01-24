@@ -1,11 +1,10 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Main = () => {
   return (
     <StyledRoot>
-      <StyledLink to="/propPractice">
+      {/* <StyledLink to="/propPractice">
         <button>prop-Practice</button>
       </StyledLink>
       <StyledLink to="/useStatePractice">
@@ -25,9 +24,9 @@ const Main = () => {
       </StyledLink>
       <StyledLink to="/apiPractice">
         <button>api-Practice</button>
-      </StyledLink>
+      </StyledLink> */}
       <StyledLink to="/typeScriptPractice">
-        <button>typeScript-Practice</button>
+        <button>JavaScript-Practice</button>
       </StyledLink>
     </StyledRoot>
   );

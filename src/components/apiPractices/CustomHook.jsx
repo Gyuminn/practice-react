@@ -1,11 +1,11 @@
 import axios from "axios";
-import React from "react";
 import { useAsync } from "./useAsync";
 
 const getUsers = async () => {
   const response = await axios.get("http://jsonplaceholder.typicode.com/users");
   return response.data;
 };
+
 const CustomHook = () => {
   const [state, refetch] = useAsync(getUsers, [], true);
 

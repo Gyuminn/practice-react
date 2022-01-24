@@ -11,6 +11,7 @@ import Children from "./components/contextPractices/Children";
 import ReducerPractice from "./pages/ReducerPractice";
 import RefPractice from "./pages/RefPractice";
 import ApiPractice from "./pages/ApiPractice";
+import TypeScriptPractice from "./pages/TypeScriptPractice";
 
 const Router = () => {
   return (
@@ -28,7 +29,7 @@ const Router = () => {
         <Route path="/reducerPractice" element={<ReducerPractice />} />
         <Route path="/refPractice" element={<RefPractice />} />
         <Route path="/apiPractice" element={<ApiPractice />} />
-        {/* <Route path="/typeScriptPractice" element={<TypeScriptPractice />} /> */}
+        <Route path="/typeScriptPractice" element={<TypeScriptPractice />} />
       </Routes>
     </BrowserRouter>
   );
