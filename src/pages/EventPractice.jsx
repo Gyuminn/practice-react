@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 
 const EventPractice = () => {
   const [form, setForm] = useState({
@@ -34,14 +35,14 @@ const EventPractice = () => {
   return (
     <div>
       <h1>이벤트 연습</h1>
-      <input
+      <Input
         type="text"
         name="username"
         placeholder="사용자명"
         // value={username}
         onChange={onChange}
       />
-      <input
+      <Input
         type="text"
         name="message"
         placeholder="아무거나 입력해 보세요"
@@ -55,3 +56,5 @@ const EventPractice = () => {
 };
 
 export default EventPractice;
+
+const Input = styled.input``;
