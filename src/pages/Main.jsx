@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Main = () => {
   return (
     <StyledRoot>
-      {/* <StyledLink to="/propPractice">
+      <StyledLink to="/propPractice">
         <button>prop-Practice</button>
       </StyledLink>
       <StyledLink to="/useStatePractice">
@@ -24,9 +24,6 @@ const Main = () => {
       </StyledLink>
       <StyledLink to="/apiPractice">
         <button>api-Practice</button>
-      </StyledLink> */}
-      <StyledLink to="/typeScriptPractice">
-        <button>JavaScript-Practice</button>
       </StyledLink>
     </StyledRoot>
   );
