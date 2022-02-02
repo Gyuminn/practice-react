@@ -57,4 +57,4 @@ const EventPractice = () => {
 
 export default EventPractice;
 
-const Input = styled.input.attrs({ required: true })``;
+const Input = styled.input.attrs({ required: true, minlength: 10 })``;

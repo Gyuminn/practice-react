@@ -25,6 +25,9 @@ const Main = () => {
       <StyledLink to="/apiPractice">
         <button>api-Practice</button>
       </StyledLink>
+      <StyledLink to="/crypto">
+        <button>Crypto Tracker</button>
+      </StyledLink>
     </StyledRoot>
   );
 };
