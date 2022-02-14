@@ -6,4 +6,4 @@ declare module "styled-components" {
         textColor:string;
         accentColor:string
     }
-}
+} 
