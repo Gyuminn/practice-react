@@ -11,7 +11,8 @@ import Children from "./components/contextPractices/Children";
 import ReducerPractice from "./pages/ReducerPractice";
 import RefPractice from "./pages/RefPractice";
 import ApiPractice from "./pages/ApiPractice";
-import Crypto from "./pages/Crypto";
+import Coins from "./components/cryptoTrackers/Coins";
+import Coin from "./components/cryptoTrackers/Coin";
 
 const Router = () => {
   return (
@@ -29,7 +30,8 @@ const Router = () => {
         <Route path="/reducerPractice" element={<ReducerPractice />} />
         <Route path="/refPractice" element={<RefPractice />} />
         <Route path="/apiPractice" element={<ApiPractice />} />
-        <Route path="/crypto" element={<Crypto />} />
+        <Route path="/coins" element={<Coins />} />
+        <Route path="/coins/:coinId" element={<Coin />} />
       </Routes>
     </BrowserRouter>
   );
