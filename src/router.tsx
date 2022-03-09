@@ -13,6 +13,8 @@ import RefPractice from "./pages/RefPractice";
 import ApiPractice from "./pages/ApiPractice";
 import Coins from "./components/cryptoTrackers/Coins";
 import Coin from "./components/cryptoTrackers/Coin";
+import Price from "./components/cryptoTrackers/Price";
+import Chart from "./components/cryptoTrackers/Chart";
 
 const Router = () => {
   return (
@@ -31,7 +33,10 @@ const Router = () => {
         <Route path="/refPractice" element={<RefPractice />} />
         <Route path="/apiPractice" element={<ApiPractice />} />
         <Route path="/coins" element={<Coins />} />
-        <Route path="/coins/:coinId" element={<Coin />} />
+        <Route path="/:coinId/*" element={<Coin />}>
+          <Route path="price" element={<Price />} />
+          <Route path="chart" element={<Chart />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
