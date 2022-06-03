@@ -11,7 +11,7 @@ import Children from "./components/contextPractices/Children";
 import ReducerPractice from "./pages/ReducerPractice";
 import RefPractice from "./pages/RefPractice";
 import ApiPractice from "./pages/ApiPractice";
-import Coins from "./components/cryptoTrackers/Coins";
+import Coins from "./pages/Coins";
 import Coin from "./components/cryptoTrackers/Coin";
 import Price from "./components/cryptoTrackers/Price";
 import Chart from "./components/cryptoTrackers/Chart";

@@ -104,7 +104,6 @@ export default function Coin() {
   const [priceInfo, setPriceInfo] = useState<IPriceData>();
 
   const priceMatch = useMatch("/:coinId/price");
-  console.log(priceMatch);
   const chartMatch = useMatch("/:coinId/chart");
   useEffect(() => {
     (async () => {
