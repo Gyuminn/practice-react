@@ -110,6 +110,7 @@ export default function Coin() {
     ["tickers", coinId],
     () => fetchCoinTickers(coinId)
   );
+  const loading = infoLoading || tickersLoading;
 
   // const [loading, setLoading] = useState(true);
   // const [info, setInfo] = useState<IInfoData>();
@@ -129,7 +130,6 @@ export default function Coin() {
   //   })();
   // }, [coinId]);
 
-  const loading = infoLoading || tickersLoading;
   return (
     <Container>
       <Header>
@@ -174,7 +174,7 @@ export default function Coin() {
               <Link to="chart">Chart</Link>
             </Tab>
           </Tabs>
-          <Outlet />
+          <Outlet context={{ coinId }} />
         </>
       )}
     </Container>

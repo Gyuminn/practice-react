@@ -17,3 +17,9 @@ export const fetchCoinTickers = async (coinId: string | undefined) => {
     response.json()
   );
 };
+
+export const fetchCoinHistory = async (coinId: string | undefined) => {
+  return await await fetch(
+    `https://ohlcv-api.nomadcoders.workers.dev?coinId=${coinId}`
+  ).then((response) => response.json());
+};
