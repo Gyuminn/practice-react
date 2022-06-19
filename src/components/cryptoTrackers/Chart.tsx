@@ -3,14 +3,14 @@ import { useOutletContext } from "react-router-dom";
 import { fetchCoinHistory } from "../../api";
 import ApexChart from "react-apexcharts";
 interface IHistorical {
-  close: string;
-  high: string;
-  low: string;
+  close: number;
+  high: number;
+  low: number;
   market_cap: number;
-  open: string;
-  time_close: number;
-  time_open: number;
-  volume: string;
+  open: number;
+  time_close: string;
+  time_open: string;
+  volume: number;
 }
 interface ChartProps {
   coinId: string;
@@ -18,10 +18,11 @@ interface ChartProps {
 
 export default function Chart() {
   const { coinId } = useOutletContext<ChartProps>();
-  const { isLoading, data } = useQuery<IHistorical[]>(["ohlcv", coinId], () =>
-    fetchCoinHistory(coinId)
+  const { isLoading, data: coinData } = useQuery<IHistorical[]>(
+    ["ohlcv", coinId],
+    () => fetchCoinHistory(coinId)
   );
-  console.log(isLoading, data);
+
   return (
     <div>
       {isLoading ? (
@@ -30,13 +31,43 @@ export default function Chart() {
         <ApexChart
           type="line"
           series={[
-            { name: "hello", data: [1, 2, 3, 4, 5, 6] },
-            { name: "sales", data: [15, 17, 15, 18, 56] },
+            {
+              name: "Price",
+              data: coinData?.map((price) => price.close) as number[],
+            },
           ]}
           options={{
+            theme: {
+              mode: "dark",
+            },
             chart: {
               height: 500,
               width: 500,
+              toolbar: {
+                show: false,
+              },
+              background: "transparent",
+            },
+            grid: {
+              show: false,
+            },
+            stroke: {
+              curve: "smooth",
+              width: 5,
+            },
+            yaxis: {
+              show: false,
+            },
+            xaxis: {
+              labels: {
+                show: false,
+              },
+              axisTicks: {
+                show: false,
+              },
+              axisBorder: {
+                show: false,
+              },
             },
           }}
         />
