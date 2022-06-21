@@ -136,7 +136,11 @@ export default function Coin() {
 
   return (
     <Container>
-      <Helmet></Helmet>
+      <Helmet>
+        <title>
+          {state?.name ? state.name : loading ? "Loading..." : infoData?.name}
+        </title>
+      </Helmet>
       <Header>
         <Title>
           {state?.name ? state.name : loading ? "Loading..." : infoData?.name}
