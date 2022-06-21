@@ -3,6 +3,7 @@
 
 import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
+import { Helmet } from "react-helmet";
 import {
   Link,
   Outlet,
@@ -135,6 +136,7 @@ export default function Coin() {
 
   return (
     <Container>
+      <Helmet></Helmet>
       <Header>
         <Title>
           {state?.name ? state.name : loading ? "Loading..." : infoData?.name}
