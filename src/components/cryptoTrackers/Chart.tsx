@@ -68,6 +68,18 @@ export default function Chart() {
               axisBorder: {
                 show: false,
               },
+              type: "datetime",
+              categories: coinData?.map((price) => price.time_close),
+            },
+            fill: {
+              type: "gradient",
+              gradient: { gradientToColors: ["blue"], stops: [0, 100] },
+            },
+            colors: ["red"],
+            tooltip: {
+              y: {
+                formatter: (value) => `$ ${value.toFixed(2)}`,
+              },
             },
           }}
         />
