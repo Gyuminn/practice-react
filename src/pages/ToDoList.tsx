@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 export default function ToDoList() {
-  const [value, setValue] = useState();
-  const onChange = (e: React.FormEvent<HTMLFormElement>) => {
+  const [value, setValue] = useState("");
+  const onChange = (e: React.FormEvent<HTMLInputElement>) => {
     const {
       currentTarget: { value },
     } = e;
