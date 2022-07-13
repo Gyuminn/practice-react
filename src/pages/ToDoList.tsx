@@ -1,17 +1,26 @@
 import React, { useState } from "react";
 
 export default function ToDoList() {
-  const [value, setValue] = useState("");
+  const [todo, setTodo] = useState("");
   const onChange = (e: React.FormEvent<HTMLInputElement>) => {
     const {
       currentTarget: { value },
     } = e;
-    setValue(value);
+    setTodo(value);
+  };
+
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(todo);
   };
   return (
     <div>
-      <form>
-        <input value={value} onChange={onChange} placeholder="todo"></input>
+      <form onSubmit={onSubmit}>
+        <input
+          value={todo}
+          onChange={onChange}
+          placeholder="write a todo"
+        ></input>
         <button>Add</button>
       </form>
     </div>
