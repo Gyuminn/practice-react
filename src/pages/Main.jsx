@@ -28,6 +28,9 @@ const Main = () => {
       <StyledLink to="/coins">
         <button>Crypto Tracker</button>
       </StyledLink>
+      <StyledLink to="/toDoList">
+        <button>ToDo List</button>
+      </StyledLink>
     </StyledRoot>
   );
 };
