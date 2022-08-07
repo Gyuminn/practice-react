@@ -27,13 +27,28 @@ import { useForm } from "react-hook-form";
 //     </div>
 //   );
 // }
+interface IForm {
+  email: string;
+  First_Name: string;
+  Last_Name: string;
+  Password: string;
+  Password1: string;
+}
 
 export default function ToDoList() {
-  const { register, handleSubmit, formState } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IForm>({
+    defaultValues: {
+      email: "@naver.com",
+    },
+  });
   const onValid = (data: any) => {
     console.log(data);
   };
-  console.log(formState.errors);
+  console.log(errors);
 
   return (
     <div>
@@ -42,24 +57,34 @@ export default function ToDoList() {
         onSubmit={handleSubmit(onValid)}
       >
         <input
-          {...register("toDo", { required: true, minLength: 10 })}
+          {...register("email", {
+            required: "Email is required",
+            pattern: {
+              value: /^[A-Za-z0-9._%+-]+@naver.com$/gm,
+              message: "naver 메일만 가능합니다",
+            },
+          })}
           placeholder="Email"
         />
+        <span>{errors?.email?.message}</span>
         <input
-          {...register("Frist_Name", { required: true, minLength: 10 })}
+          {...register("First_Name", { required: "write here" })}
           placeholder="Frist Name"
         />
+        <span>{errors?.First_Name?.message}</span>
         <input
-          {...register("Last_Name", { required: true, minLength: 10 })}
+          {...register("Last_Name", { required: "write here" })}
           placeholder="Last Name"
         />
+        <span>{errors?.Last_Name?.message}</span>
         <input
           {...register("Password", {
             required: "Password is required",
-            minLength: 10,
+            minLength: 5,
           })}
           placeholder="Password"
         />
+        <span>{errors?.Password?.message}</span>
         <input
           {...register("Password1", {
             required: true,
@@ -70,6 +95,7 @@ export default function ToDoList() {
           })}
           placeholder="Password1"
         />
+        <span>{errors?.Password1?.message}</span>
         <button>Add</button>
       </form>
     </div>
