@@ -36,7 +36,7 @@ interface IForm {
   extraError?: string;
 }
 
-export default function ToDoList() {
+export default function FormPractice() {
   const {
     register,
     handleSubmit,

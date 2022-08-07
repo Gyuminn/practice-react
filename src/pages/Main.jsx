@@ -28,8 +28,8 @@ const Main = () => {
       <StyledLink to="/coins">
         <button>Crypto Tracker</button>
       </StyledLink>
-      <StyledLink to="/toDoList">
-        <button>To Do List</button>
+      <StyledLink to="/formPractice">
+        <button>useForm-Practice</button>
       </StyledLink>
     </StyledRoot>
   );
