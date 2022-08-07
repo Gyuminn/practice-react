@@ -29,7 +29,7 @@ const Main = () => {
         <button>Crypto Tracker</button>
       </StyledLink>
       <StyledLink to="/toDoList">
-        <button>ToDo List</button>
+        <button>To Do List</button>
       </StyledLink>
     </StyledRoot>
   );
