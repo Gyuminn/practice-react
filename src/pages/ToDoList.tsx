@@ -33,6 +33,7 @@ interface IForm {
   Last_Name: string;
   Password: string;
   Password1: string;
+  extraError?: string;
 }
 
 export default function ToDoList() {
@@ -40,15 +41,23 @@ export default function ToDoList() {
     register,
     handleSubmit,
     formState: { errors },
+    setError,
   } = useForm<IForm>({
     defaultValues: {
       email: "@naver.com",
     },
   });
-  const onValid = (data: any) => {
-    console.log(data);
+  const onValid = (data: IForm) => {
+    if (data.Password !== data.Password1) {
+      setError(
+        "Password1",
+        { message: "Password is different" },
+        { shouldFocus: true }
+      );
+      console.log(errors);
+    }
+    // setError("extraError", { message: "Server is offline" });
   };
-  console.log(errors);
 
   return (
     <div>
@@ -68,7 +77,14 @@ export default function ToDoList() {
         />
         <span>{errors?.email?.message}</span>
         <input
-          {...register("First_Name", { required: "write here" })}
+          {...register("First_Name", {
+            required: "write here",
+            // valideate는 하나의 함수, 또는 여러 함수를 포함하는 객체가 될 수 있다.
+            validate: {
+              noYuna: (value) =>
+                value.includes("yuna") ? "yuna is not allowd" : true,
+            },
+          })}
           placeholder="Frist Name"
         />
         <span>{errors?.First_Name?.message}</span>
@@ -97,6 +113,7 @@ export default function ToDoList() {
         />
         <span>{errors?.Password1?.message}</span>
         <button>Add</button>
+        <span>{errors?.extraError?.message} </span>
       </form>
     </div>
   );
