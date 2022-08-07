@@ -15,7 +15,7 @@ import Coins from "./pages/Coins";
 import Coin from "./components/cryptoTrackers/Coin";
 import Price from "./components/cryptoTrackers/Price";
 import Chart from "./components/cryptoTrackers/Chart";
-import FormPractice from "./pages/FromPractice";
+import FormPractice from "./pages/FormPractice";
 
 const Router = () => {
   return (
