@@ -16,6 +16,7 @@ import Coin from "./components/cryptoTrackers/Coin";
 import Price from "./components/cryptoTrackers/Price";
 import Chart from "./components/cryptoTrackers/Chart";
 import FormPractice from "./pages/FormPractice";
+import ToDoList from "./pages/ToDoList";
 
 const Router = () => {
   return (
@@ -38,6 +39,7 @@ const Router = () => {
           <Route path="price" element={<Price />} />
           <Route path="chart" element={<Chart />} />
         </Route>
+        <Route path="/toDoList" element={<ToDoList />} />
         <Route path="/formPractice" element={<FormPractice />} />
       </Routes>
     </BrowserRouter>
