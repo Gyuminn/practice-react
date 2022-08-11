@@ -16,6 +16,7 @@ function ToDoList() {
       <ul>
         {toDos.map((toDo) => (
           // prop으로 하나하나 내려주는게 아니라 spread로 넘겨주기
+          // ToDo에서도 같은 타입을 바라보고 있기 때문에 가능
           <ToDo key={toDo.id} {...toDo} />
         ))}
       </ul>
