@@ -7,7 +7,7 @@ interface IForm {
 }
 
 export default function CreateToDo() {
-  // useRecoilValue 와 useSetRecoilState를 쓰는 대신 useRecoilState를 쓰자.
+  // useRecoilValue 와 useSetRecoilState를 쓰는 대신 useRecoilState를 쓰는 방법도 좋다.
   const setToDos = useSetRecoilState(toDoState);
 
   const { register, handleSubmit, setValue } = useForm<IForm>();
