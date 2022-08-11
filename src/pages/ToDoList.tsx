@@ -1,51 +1,22 @@
-import { useForm } from "react-hook-form";
-import { atom, useRecoilState } from "recoil";
-
-interface IForm {
-  toDo: string;
-}
-
-interface IToDo {
-  text: string;
-  id: number;
-  category: "TO_DO" | "DOING" | "DONE";
-}
-
-const toDoState = atom<IToDo[]>({
-  key: "toDo",
-  default: [],
-});
+import { useRecoilValue } from "recoil";
+import { toDoState } from "../atoms";
+import CreateToDo from "../components/toDoList/CreateToDo";
+import ToDo from "../components/toDoList/ToDo";
 
 function ToDoList() {
-  // useRecoilValue 와 useSetRecoilState를 쓰는 대신 useRecoilState를 쓰자.
-  const [toDos, setToDos] = useRecoilState(toDoState);
-
-  const { register, handleSubmit, setValue } = useForm<IForm>();
-
-  const handleValid = ({ toDo }: IForm) => {
-    setToDos((oldToDos) => [
-      ...oldToDos,
-      { text: toDo, id: Date.now(), category: "TO_DO" },
-    ]);
-    setValue("toDo", "");
-  };
-
+  const toDos = useRecoilValue(toDoState);
+  // 하위 컴포넌트에서 value를 사용하고 수정하지만
+  // useRecoilValue를 통해서 바로 값 가져오기.
+  // 어떤 prop도 전달할 필요가 없다.
   return (
     <div>
       <h1>To Dos</h1>
       <hr />
-      <form onSubmit={handleSubmit(handleValid)}>
-        <input
-          {...register("toDo", {
-            required: "Please write a To Do",
-          })}
-          placeholder="Write a to do"
-        />
-        <button>Add</button>
-      </form>
+      <CreateToDo />
       <ul>
         {toDos.map((toDo) => (
-          <li key={toDo.id}>{toDo.text}</li>
+          // prop으로 하나하나 내려주는게 아니라 spread로 넘겨주기
+          <ToDo key={toDo.id} {...toDo} />
         ))}
       </ul>
     </div>
