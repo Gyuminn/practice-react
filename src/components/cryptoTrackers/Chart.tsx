@@ -4,6 +4,7 @@ import { fetchCoinHistory } from "../../api";
 import ApexChart from "react-apexcharts";
 import { useRecoilValue } from "recoil";
 import { isDarkAtom } from "../../atoms";
+
 interface IHistorical {
   close: number;
   high: number;
