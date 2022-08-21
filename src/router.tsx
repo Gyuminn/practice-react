@@ -17,6 +17,7 @@ import Price from "./components/cryptoTrackers/Price";
 import Chart from "./components/cryptoTrackers/Chart";
 import FormPractice from "./pages/FormPractice";
 import ToDoList from "./pages/ToDoList";
+import TrelloClone from "./pages/TrelloClone";
 
 const Router = () => {
   return (
@@ -41,6 +42,7 @@ const Router = () => {
         </Route>
         <Route path="/toDoList" element={<ToDoList />} />
         <Route path="/formPractice" element={<FormPractice />} />
+        <Route path="/trello" element={<TrelloClone />} />
       </Routes>
     </BrowserRouter>
   );

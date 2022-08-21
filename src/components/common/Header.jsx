@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <StyledRoot>
       <Link to="/">
-        <button>안녕하세요, 김규민의 리액트 연습공간입니다</button>
+        <button>리액트 연습공간</button>
       </Link>
     </StyledRoot>
   );
@@ -17,4 +17,5 @@ const StyledRoot = styled.div`
   margin: 2rem 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;

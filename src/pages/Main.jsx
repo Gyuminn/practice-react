@@ -2,38 +2,30 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Main = () => {
+  const studies = [
+    {
+      id: 1,
+      url: "/propPractice",
+      buttonText: "props - practice",
+    },
+    { id: 2, url: "/useStatePractice", buttonText: "useState-practice" },
+    { id: 3, url: "/eventPractice", buttonText: "event-practice" },
+    { id: 4, url: "/contextPractice", buttonText: "useContext-practice" },
+    { id: 5, url: "/reducerPractice", buttonText: "useReducer-practice" },
+    { id: 6, url: "/refPractice", buttonText: "useRef-practice" },
+    { id: 7, url: "/apiPractice", buttonText: "api-practice" },
+    { id: 8, url: "/coins", buttonText: "Crypto-Tracker" },
+    { id: 9, url: "/formPractice", buttonText: "useForm-practice" },
+    { id: 10, url: "/toDoList", buttonText: "toDo-List" },
+    { id: 11, url: "/trello", buttonText: "trello-clone" },
+  ];
   return (
     <StyledRoot>
-      <StyledLink to="/propPractice">
-        <button>prop-Practice</button>
-      </StyledLink>
-      <StyledLink to="/useStatePractice">
-        <button>useState-Practice</button>
-      </StyledLink>
-      <StyledLink to="/eventPractice">
-        <button>event-Practice</button>
-      </StyledLink>
-      <StyledLink to="/contextPractice">
-        <button>useContext-Practice</button>
-      </StyledLink>
-      <StyledLink to="/reducerPractice">
-        <button>useReducer-Practice</button>
-      </StyledLink>
-      <StyledLink to="/refPractice">
-        <button>useRef-Practice</button>
-      </StyledLink>
-      <StyledLink to="/apiPractice">
-        <button>api-Practice</button>
-      </StyledLink>
-      <StyledLink to="/coins">
-        <button>Crypto Tracker</button>
-      </StyledLink>
-      <StyledLink to="/formPractice">
-        <button>useForm-Practice</button>
-      </StyledLink>
-      <StyledLink to="/toDoList">
-        <button>To Do - List</button>
-      </StyledLink>
+      {studies.map((study) => (
+        <StyledLink to={study.url} key={study.id}>
+          <button>{study.buttonText}</button>
+        </StyledLink>
+      ))}
     </StyledRoot>
   );
 };
@@ -44,7 +36,7 @@ const StyledRoot = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
+  align-items: center;
 `;
 
 const StyledLink = styled(Link)`
