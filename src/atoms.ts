@@ -29,6 +29,7 @@ export const toDoState = atom<IToDo[]>({
 
 // useRecoilState는 atom 값을 수정하고 싶을때 사용.
 // selector는 atom의 결과값을 이리 저리 요리하고 싶을때 사용.
+// set 은 atom을 변경시키고 싶을 때 사용할 수 있다.
 export const toDoSelector = selector({
   key: "toDoSelector",
   get: ({ get }) => {

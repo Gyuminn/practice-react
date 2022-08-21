@@ -197,7 +197,7 @@ const Loader = styled.span`
 
 const Title = styled.h1`
   font-size: 48px;
-  color: ${(props) => props.theme.accentColor};
+  color: ${(props) => props.theme.boardColor};
 `;
 
 const Container = styled.div`
@@ -254,7 +254,7 @@ const Tab = styled.span<{ isActive: boolean }>`
   padding: 7px 0px;
   border-radius: 10px;
   color: ${(props) =>
-    props.isActive ? props.theme.accentColor : props.theme.textColor};
+    props.isActive ? props.theme.boardColor : props.theme.cardColor};
   a {
     display: block;
   }

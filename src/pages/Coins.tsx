@@ -74,7 +74,7 @@ const Loader = styled.span`
 
 const Title = styled.h1`
   font-size: 48px;
-  color: ${(props) => props.theme.accentColor};
+  color: ${(props) => props.theme.boardColor};
 `;
 
 const Container = styled.div`
@@ -94,7 +94,7 @@ const CoinsList = styled.ul``;
 
 const Coin = styled.li`
   background-color: white;
-  color: ${(props) => props.theme.textColor};
+  color: ${(props) => props.theme.cardColor};
   border-radius: 15px;
   margin-bottom: 10px;
 
@@ -106,6 +106,6 @@ const Coin = styled.li`
   }
 
   & > a:hover {
-    color: ${(props) => props.theme.accentColor};
+    color: ${(props) => props.theme.boardColor};
   }
 `;
