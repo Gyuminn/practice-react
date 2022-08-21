@@ -39,3 +39,8 @@ export const toDoSelector = selector({
     
   },
 });
+
+export const trelloToDoState = atom({
+  key:"trelloToDo",
+  default:['a','b','c','d','e','f'],
+})
