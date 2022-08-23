@@ -40,7 +40,18 @@ export const toDoSelector = selector({
   },
 });
 
-export const trelloToDoState = atom({
+// 유저로 하여금 board를 추가시키게 할 수 있다.
+// 그렇다면 to_do, doing, done 외에도 추가시킬 수 있게 하기 위해
+// interface를 통해 주어진 3개만 있는게 아니라고 알려준다.
+interface ItrelloToDoState {
+  [key:string]:string[];
+}
+
+export const trelloToDoState = atom<ItrelloToDoState>({
   key:"trelloToDo",
-  default:['a','b','c','d','e','f'],
-})
+  default:{
+    to_do: ['a','b'],
+    doing: ['c','d','e'],
+    done:['f'],
+  },
+});
