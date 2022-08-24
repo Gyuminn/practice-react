@@ -9,6 +9,7 @@ export default function TrelloClone() {
 
   const onDragEnd = (info: DropResult) => {
     const { draggableId, destination, source } = info;
+    if (!destination) return;
     if (destination?.droppableId === source.droppableId) {
       // same board movement
       setToDos((prevAllBoards) => {
@@ -18,6 +19,21 @@ export default function TrelloClone() {
         return {
           ...prevAllBoards,
           [source.droppableId]: boardCopy,
+        };
+      });
+    }
+    if (destination.droppableId !== source.droppableId) {
+      // cross board movement
+      setToDos((prevAllBoards) => {
+        const sourceBoard = [...prevAllBoards[source.droppableId]];
+        const destinationBoard = [...prevAllBoards[destination.droppableId]];
+
+        sourceBoard.splice(source.index, 1);
+        destinationBoard.splice(destination?.index, 0, draggableId);
+        return {
+          ...prevAllBoards,
+          [source.droppableId]: sourceBoard,
+          [destination.droppableId]: destinationBoard,
         };
       });
     }

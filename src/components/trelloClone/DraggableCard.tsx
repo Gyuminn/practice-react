@@ -10,8 +10,9 @@ function DraggableCard({ toDo, index }: IDragabbleCardProps) {
   console.log(toDo, "rerendered");
   return (
     <Draggable key={toDo} draggableId={toDo} index={index}>
-      {(magic) => (
+      {(magic, snapshot) => (
         <Card
+          isDragging={snapshot.isDragging}
           ref={magic.innerRef}
           {...magic.dragHandleProps}
           {...magic.draggableProps}
@@ -23,11 +24,14 @@ function DraggableCard({ toDo, index }: IDragabbleCardProps) {
   );
 }
 
-const Card = styled.div`
+const Card = styled.div<{ isDragging: boolean }>`
   border-radius: 5px;
   margin-bottom: 5px;
   padding: 10px 10px;
-  background-color: ${(props) => props.theme.cardColor};
+  background-color: ${(props) =>
+    props.isDragging ? "#FAB1A1" : props.theme.cardColor};
+  box-shadow: ${(props) =>
+    props.isDragging ? "0px 2px 5px rgba(0, 0, 0, 0.05)" : "none"};
 `;
 
 // 부모 컴포넌트 렌더링 -> 자식도 모두 렌더링 되는 것이 기본
