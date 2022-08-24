@@ -30,4 +30,6 @@ const Card = styled.div`
   background-color: ${(props) => props.theme.cardColor};
 `;
 
+// 부모 컴포넌트 렌더링 -> 자식도 모두 렌더링 되는 것이 기본
+// memo 를 통해 prop이 바뀌는 것들에 한해서만 리렌더링
 export default React.memo(DraggableCard);

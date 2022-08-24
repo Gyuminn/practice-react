@@ -3,24 +3,24 @@ import { useRecoilState } from "recoil";
 import styled from "styled-components";
 import { trelloToDoState } from "../atoms";
 import Board from "../components/trelloClone/Board";
-import DraggableCard from "../components/trelloClone/DraggableCard";
 
 export default function TrelloClone() {
   const [toDos, setToDos] = useRecoilState(trelloToDoState);
 
-  const onDragEnd = ({ draggableId, destination, source }: DropResult) => {
-    if (!destination) return;
-    // setToDos((oldToDos) => {
-    //   // 불변성 유지를 위해 배열 복사
-    //   const toDosCopy = [...oldToDos];
-    //   // 1) Delete item on source.index
-    //   toDosCopy.splice(source.index, 1);
-
-    //   // 2) Put back the item on the destination.index
-    //   toDosCopy.splice(destination?.index, 0, draggableId);
-
-    //   return toDosCopy;
-    // });
+  const onDragEnd = (info: DropResult) => {
+    const { draggableId, destination, source } = info;
+    if (destination?.droppableId === source.droppableId) {
+      // same board movement
+      setToDos((prevAllBoards) => {
+        const boardCopy = [...prevAllBoards[source.droppableId]];
+        boardCopy.splice(source.index, 1);
+        boardCopy.splice(destination?.index, 0, draggableId);
+        return {
+          ...prevAllBoards,
+          [source.droppableId]: boardCopy,
+        };
+      });
+    }
   };
   return (
     <DragDropContext onDragEnd={onDragEnd}>
@@ -28,6 +28,8 @@ export default function TrelloClone() {
         <Boards>
           {/* Object를 map으로 돌리기 위한 방법 */}
           {Object.keys(toDos).map((boardId) => (
+            // key와 draggableId 는 같아야 한다.
+            // draggableId로 어떤 board인지 구분 가능하다. 이는 onDragEnd 함수에서 info를 찍어보면 됨!
             <Board boardId={boardId} key={boardId} toDos={toDos[boardId]} />
           ))}
         </Boards>
@@ -38,8 +40,7 @@ export default function TrelloClone() {
 
 const Wrapper = styled.div`
   display: flex;
-  max-width: 480px;
-  width: 100%;
+  width: 100vw;
   margin: 0 auto;
   justify-content: center;
   align-items: center;
@@ -47,8 +48,9 @@ const Wrapper = styled.div`
 `;
 
 const Boards = styled.div`
-  display: grid;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   width: 100%;
   gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
 `;

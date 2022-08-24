@@ -50,8 +50,8 @@ interface ItrelloToDoState {
 export const trelloToDoState = atom<ItrelloToDoState>({
   key:"trelloToDo",
   default:{
-    to_do: ['a','b'],
-    doing: ['c','d','e'],
-    done:['f'],
+    "To Do": ['a','b'],
+    "Doing": ['c','d','e'],
+    "Done":['f'],
   },
 });
