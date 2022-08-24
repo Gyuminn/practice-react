@@ -14,8 +14,9 @@ export default function TrelloClone() {
       // same board movement
       setToDos((prevAllBoards) => {
         const boardCopy = [...prevAllBoards[source.droppableId]];
+        const taskObj = boardCopy[source.index];
         boardCopy.splice(source.index, 1);
-        boardCopy.splice(destination?.index, 0, draggableId);
+        boardCopy.splice(destination?.index, 0, taskObj);
         return {
           ...prevAllBoards,
           [source.droppableId]: boardCopy,
@@ -27,9 +28,10 @@ export default function TrelloClone() {
       setToDos((prevAllBoards) => {
         const sourceBoard = [...prevAllBoards[source.droppableId]];
         const destinationBoard = [...prevAllBoards[destination.droppableId]];
+        const taskObj = sourceBoard[source.index];
 
         sourceBoard.splice(source.index, 1);
-        destinationBoard.splice(destination?.index, 0, draggableId);
+        destinationBoard.splice(destination?.index, 0, taskObj);
         return {
           ...prevAllBoards,
           [source.droppableId]: sourceBoard,
