@@ -15,6 +15,7 @@
     "@types/styled-components": "^5.1.19",
     "apexcharts": "^3.35.3",
     "axios": "^0.24.0",
+    "gh-pages": "^4.0.0",
     "react": "^17.0.2",
     "react-apexcharts": "^1.4.0",
     "react-beautiful-dnd": "^13.1.0",
@@ -36,7 +37,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
+    "predeploy": "yarn build"
   },
   "eslintConfig": {
     "extends": [
