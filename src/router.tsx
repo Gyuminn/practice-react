@@ -21,7 +21,7 @@ import TrelloClone from "./pages/TrelloClone";
 
 const Router = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Header />
       <Routes>
         <Route path="/" element={<Main />} />
