@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/practice-react/static/js/main.477ea960.js",
-    "index.html": "/practice-react/index.html",
-    "main.477ea960.js.map": "/practice-react/static/js/main.477ea960.js.map"
+    "main.js": "https://Gyuminn.github.io/practice-react/static/js/main.36cbcfe1.js",
+    "index.html": "https://Gyuminn.github.io/practice-react/index.html",
+    "main.36cbcfe1.js.map": "https://Gyuminn.github.io/practice-react/static/js/main.36cbcfe1.js.map"
   },
   "entrypoints": [
-    "static/js/main.477ea960.js"
+    "static/js/main.36cbcfe1.js"
   ]
 }
